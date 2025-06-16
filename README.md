@@ -69,25 +69,25 @@ flowchart TD
 ### 계획 모드
 ```mermaid
 flowchart TD
-    Start[시작] --> ReadFiles[메모리 뱅크 읽기]
-    ReadFiles --> CheckFiles{파일 완성 여부?}
+    Start[Start] --> ReadFiles[Read Memory Bank]
+    ReadFiles --> CheckFiles{Files Complete?}
     
-    CheckFiles -->|아니오| Plan[계획 생성]
-    Plan --> Document[채팅에 문서화]
+    CheckFiles -->|No| Plan[Create Plan]
+    Plan --> Document[Document in Chat]
     
-    CheckFiles -->|예| Verify[컨텍스트 확인]
-    Verify --> Strategy[전략 개발]
-    Strategy --> Present[접근 방식 제시]
+    CheckFiles -->|Yes| Verify[Verify Context]
+    Verify --> Strategy[Develop Strategy]
+    Strategy --> Present[Present Approach]
 ```
 
 ### 실행 모드
 ```mermaid
 flowchart TD
-    Start[시작] --> Context[메모리 뱅크 확인]
-    Context --> Update[문서 업데이트]
-    Update --> Rules[.clinerules 업데이트 (필요 시)]
-    Rules --> Execute[작업 실행]
-    Execute --> Document[변경 사항 문서화]
+    Start[Start] --> Context[Check Memory Bank]
+    Context --> Update[Update Documentation]
+    Update --> Rules[Update .clinerules if needed]
+    Rules --> Execute[Execute Task]
+    Execute --> Document[Document Changes]
 ```
 
 ## 문서 업데이트
@@ -100,13 +100,13 @@ flowchart TD
 
 ```mermaid
 flowchart TD
-    Start[업데이트 프로세스]
+    Start[Update Process]
     
     subgraph Process
-        P1[모든 파일 검토]
-        P2[현재 상태 문서화]
-        P3[다음 단계 명확화]
-        P4[.clinerules 업데이트]
+        P1[Review All Files]
+        P2[Document Current State]
+        P3[Clarify Next Steps]
+        P4[Update .clinerules]
         
         P1 --> P2 --> P3 --> P4
     end
